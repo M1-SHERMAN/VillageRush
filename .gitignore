@@ -1,0 +1,14 @@
+*.vs
+thirdparty/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.user.local
+*.vcxproj.filters
+*.vscode
+*.vscode/*
+x64/Release/
+x64/Debug/
+VillageRush/x64/Release/
+
