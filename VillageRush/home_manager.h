@@ -7,7 +7,8 @@
 
 class HomeManager : public Manager<HomeManager>
 {
-	friend class  Manager<HomeManager>;
+	friend class Manager<HomeManager>;
+
 public:
 	double get_current_hp_num()
 	{
@@ -16,15 +17,20 @@ public:
 
 	void decrease_hp(double val)
 	{
+		static ConfigManager *config_manager = ConfigManager::instance();
 		num_hp -= val;
 		if (num_hp < 0)
+		{
 			num_hp = 0;
-		
-		static const ResourcesManager::SoundPool& sound_pool
-			= ResourcesManager::instance()->get_sound_pool();
+			config_manager->is_game_win = false;
+			config_manager->is_game_over = true;
+		}
+
+		static const ResourcesManager::SoundPool &sound_pool = ResourcesManager::instance()->get_sound_pool();
 
 		Mix_PlayChannel(-1, sound_pool.find(ResID::Sound_HomeHurt)->second, 0);
 	}
+
 protected:
 	HomeManager()
 	{
@@ -37,4 +43,3 @@ private:
 };
 
 #endif // !_HOME_MANAGER_H_
-

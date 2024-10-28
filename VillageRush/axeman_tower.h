@@ -39,7 +39,7 @@ public:
 		anim_fire_up.set_frame_data(tex_axeman, 3, 8, idx_list_fire_up);
 		anim_fire_down.set_frame_data(tex_axeman, 3, 8, idx_list_fire_down);
 		anim_fire_left.set_frame_data(tex_axeman, 3, 8, idx_list_fire_left);
-		anim_fire_down.set_frame_data(tex_axeman, 3, 8, idx_list_fire_right);
+		anim_fire_right.set_frame_data(tex_axeman, 3, 8, idx_list_fire_right);
 
 		// タワーのサイズを設定
 		size.x = 48, size.y = 48;

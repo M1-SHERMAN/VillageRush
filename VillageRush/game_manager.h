@@ -46,6 +46,7 @@ class GameManager : public Manager<GameManager>
 public:
 	int run(int argc, char **argv)
 	{
+		
 
 		// BGMをフェードインで再生
 		Mix_FadeInMusic(ResourcesManager::instance()->get_music_pool().find(ResID::Music_BGM)->second, -1, 1500);
